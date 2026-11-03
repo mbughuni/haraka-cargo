@@ -45,75 +45,255 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
+
+    /* Haraka brand, status and map colours (values live in :root) */
+    --color-brand: var(--brand);
+    --color-brand-hover: var(--brand-hover);
+    --color-brand-foreground: var(--brand-foreground);
+    --color-brand-vivid: var(--brand-vivid);
+    --color-brand-ink: var(--brand-ink-color);
+    --color-brand-on-dark: var(--brand-on-dark);
+    --color-brand-green: var(--brand-green);
+    --color-brand-green-ink: var(--brand-green-ink);
+    --color-tint-blue: var(--tint-blue);
+    --color-tint-peach: var(--tint-peach);
+    --color-tint-mint: var(--tint-mint);
+    --color-tint-lavender: var(--tint-lavender);
+    --color-tint-sand: var(--tint-sand);
+    --color-tint-rose: var(--tint-rose);
+    --color-tint-grey: var(--tint-grey);
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-info: var(--info);
+    --color-surface-inverse: var(--surface-inverse);
+    --color-surface-inverse-foreground: var(--surface-inverse-foreground);
+    --color-surface-inverse-muted: var(--surface-inverse-muted);
+    --color-map-water: var(--map-water);
+    --color-map-land: var(--map-land);
+    --color-map-land-stroke: var(--map-land-stroke);
+    --color-map-destination: var(--map-destination);
+    --color-map-origin: var(--map-origin);
+    --color-map-market: var(--map-market);
+    --color-map-route-active: var(--map-route-active);
+    --color-map-route-planned: var(--map-route-planned);
+    --color-map-marker: var(--map-marker);
+    --shadow-card: var(--elevation-card);
+    --shadow-raised: var(--elevation-raised);
+}
+
+/* Static design tokens: type scale, layout, motion */
+@theme {
+    --text-hero: clamp(2.5rem, 1.7rem + 3vw, 4.125rem);
+    --text-hero--line-height: 1.02;
+    --text-hero--letter-spacing: -0.042em;
+    --text-hero--font-weight: 500;
+
+    --text-display: clamp(2.125rem, 1.65rem + 1.6vw, 3.125rem);
+    --text-display--line-height: 1.06;
+    --text-display--letter-spacing: -0.035em;
+    --text-display--font-weight: 600;
+
+    --text-title: clamp(1.875rem, 1.5rem + 1.5vw, 2.625rem);
+    --text-title--line-height: 1.1;
+    --text-title--letter-spacing: -0.024em;
+    --text-title--font-weight: 600;
+
+    --text-heading: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+    --text-heading--line-height: 1.18;
+    --text-heading--letter-spacing: -0.018em;
+    --text-heading--font-weight: 600;
+
+    --text-subheading: 1.125rem;
+    --text-subheading--line-height: 1.4;
+    --text-subheading--letter-spacing: -0.008em;
+    --text-subheading--font-weight: 600;
+
+    --text-lead: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+    --text-lead--line-height: 1.6;
+
+    --text-body: 1rem;
+    --text-body--line-height: 1.6;
+
+    --text-label: 0.875rem;
+    --text-label--line-height: 1.4;
+    --text-label--font-weight: 500;
+
+    --text-meta: 0.75rem;
+    --text-meta--line-height: 1.35;
+    --text-meta--letter-spacing: 0.01em;
+
+    --text-eyebrow: 0.75rem;
+    --text-eyebrow--line-height: 1;
+    --text-eyebrow--letter-spacing: 0.12em;
+    --text-eyebrow--font-weight: 600;
+
+    --container-page: 78rem;
+    --container-prose: 38rem;
+
+    --spacing-section: clamp(4rem, 2.75rem + 5vw, 7rem);
+    --spacing-gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
+
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+    --aspect-product: 4 / 3;
+    --aspect-editorial: 3 / 2;
+    --aspect-portrait: 4 / 5;
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    /* ---- Brand palette (reference values; use the semantic tokens below) */
+    --ink-950: #0f1013;
+    --ink-900: #16171b;
+    --ink-700: #33353c;
+    --navy-950: #0b1b3f;
+    --navy-900: #0c2252;
+    --navy-800: #13306a;
+    --blue-600: #1f4fd8;
+    --blue-300: #6e9bff;
+    /* Logo green: lines, dots and graphics only (3.1:1 on white).
+       Use --green-700 for green text. */
+    --green-500: #2aa848;
+    --green-700: #1e7a38;
+    --grey-50: #f4f4f5;
+    --grey-100: #ececee;
+    --grey-200: #e2e2e5;
+
+    /* Pastel tints for image tiles and category accents */
+    --tint-blue: #dde7f7;
+    --tint-peach: #fbe3d3;
+    --tint-mint: #dcf1e5;
+    --tint-lavender: #e7e2f8;
+    --tint-sand: #f5ead0;
+    --tint-rose: #f8dfe3;
+    --tint-grey: #ececee;
+
+    /* ---- Semantic tokens (shadcn contract) */
+    --background: var(--grey-50);
+    --foreground: var(--ink-900);
+    --card: #ffffff;
+    --card-foreground: var(--ink-900);
+    --popover: #ffffff;
+    --popover-foreground: var(--ink-900);
+    --primary: var(--ink-900);
+    --primary-foreground: #ffffff;
+    --secondary: var(--grey-100);
+    --secondary-foreground: var(--ink-900);
+    --muted: var(--grey-100);
+    --muted-foreground: #66676e;
+    --accent: var(--grey-50);
+    --accent-foreground: var(--ink-900);
+    --destructive: #b42318;
+    --border: var(--grey-200);
+    --input: #d7d7db;
+    --ring: var(--blue-600);
+
+    /* ---- Brand roles */
+    --brand: var(--navy-800);
+    --brand-hover: var(--navy-900);
+    --brand-foreground: #ffffff;
+    --brand-vivid: var(--blue-600);
+    --brand-ink-color: var(--blue-600);
+    --brand-on-dark: var(--blue-300);
+    --brand-green: var(--green-500);
+    --brand-green-ink: var(--green-700);
+    --success: #1f7a50;
+    --warning: #94600f;
+    --info: #2f5fa8;
+    --surface-inverse: var(--navy-950);
+    --surface-inverse-foreground: #f4f4f5;
+    --surface-inverse-muted: #b4bfd6;
+
+    /* ---- Trade map */
+    --map-water: #f7f7f8;
+    --map-land: var(--grey-100);
+    --map-land-stroke: #d9d9dd;
+    --map-destination: #bcd0f5;
+    --map-origin: #e3eaf8;
+    --map-market: #f2f2f4;
+    --map-route-active: var(--green-500);
+    --map-route-planned: #8b8c93;
+    --map-marker: var(--navy-800);
+
+    --elevation-card: 0 1px 2px rgb(22 23 27 / 0.04),
+        0 1px 1px rgb(22 23 27 / 0.03);
+    --elevation-raised: 0 20px 44px -20px rgb(22 23 27 / 0.22),
+        0 2px 6px rgb(22 23 27 / 0.05);
+
+    --duration-fast: 120ms;
+    --duration-base: 200ms;
+
+    --chart-1: var(--ink-900);
+    --chart-2: var(--blue-600);
+    --chart-3: #2f5fa8;
+    --chart-4: #1f7a50;
+    --chart-5: #8b8c93;
+    --radius: 0.875rem;
+    --sidebar: #ffffff;
+    --sidebar-foreground: var(--ink-900);
+    --sidebar-primary: var(--ink-900);
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: var(--grey-50);
+    --sidebar-accent-foreground: var(--ink-900);
+    --sidebar-border: var(--grey-200);
+    --sidebar-ring: var(--blue-600);
 }
 
+/*
+ * Dark tokens are kept for the future administration dashboard. The
+ * storefront is light-only (see components/theme-provider.tsx).
+ */
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    --background: #0b1824;
+    --foreground: #e8eef3;
+    --card: #10212f;
+    --card-foreground: #e8eef3;
+    --popover: #10212f;
+    --popover-foreground: #e8eef3;
+    --primary: #c3dbec;
+    --primary-foreground: #0b2133;
+    --secondary: #17304a;
+    --secondary-foreground: #e8eef3;
+    --muted: #142636;
+    --muted-foreground: #9fb0be;
+    --accent: #17304a;
+    --accent-foreground: #e8eef3;
+    --destructive: #f0857a;
+    --border: rgb(255 255 255 / 0.1);
+    --input: rgb(255 255 255 / 0.16);
+    --ring: #7fb0d4;
+
+    --brand: #6e9bff;
+    --brand-hover: #8fb2ff;
+    --brand-foreground: #0b1b3f;
+    --brand-vivid: #6e9bff;
+    --brand-ink-color: #8fb2ff;
+    --brand-on-dark: #8fb2ff;
+    --brand-green: #3cc35e;
+    --brand-green-ink: #5fd27c;
+    --success: #5cc795;
+    --warning: #e3b45a;
+    --info: #7fb0d4;
+    --surface-inverse: #0b2133;
+    --surface-inverse-foreground: #e8eef3;
+    --surface-inverse-muted: #9fb0be;
+
+    --elevation-card: 0 0 0 1px rgb(255 255 255 / 0.02);
+    --elevation-raised: 0 16px 40px -16px rgb(0 0 0 / 0.6);
+
+    --chart-1: #c3dbec;
+    --chart-2: #7fb0d4;
+    --chart-3: #d8a928;
+    --chart-4: #5cc795;
+    --chart-5: #9fb0be;
+    --sidebar: #10212f;
+    --sidebar-foreground: #e8eef3;
+    --sidebar-primary: #c3dbec;
+    --sidebar-primary-foreground: #0b2133;
+    --sidebar-accent: #17304a;
+    --sidebar-accent-foreground: #e8eef3;
+    --sidebar-border: rgb(255 255 255 / 0.1);
+    --sidebar-ring: #7fb0d4;
 }
 
 @layer base {
@@ -121,9 +301,36 @@
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-body text-foreground;
     }
   html {
     @apply font-sans;
+    scroll-padding-top: 5rem;
     }
+  ::selection {
+    background-color: rgb(31 79 216 / 0.2);
+    }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+/* Trade-route map: a slow flow along active lanes only. */
+@keyframes route-flow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+@layer components {
+  .route-flow {
+    stroke-dasharray: 2 12;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .route-flow {
+      animation: route-flow 1.6s linear infinite;
+    }
+  }
 }
