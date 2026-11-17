@@ -42,6 +42,14 @@ function SiteFooter() {
       <PageContainer className="grid gap-12 py-14 md:grid-cols-12 md:gap-8">
         <div className="flex flex-col gap-5 md:col-span-4">
           <BrandMark size="large" className="self-start" />
+          <div className="flex flex-col gap-2">
+            <p className="text-eyebrow text-brand uppercase">
+              {siteConfig.tagline}
+            </p>
+            <p className="text-eyebrow text-brand-green-ink uppercase">
+              {siteConfig.slogan}
+            </p>
+          </div>
           <p className="max-w-sm text-sm text-muted-foreground">
             {siteConfig.description}
           </p>

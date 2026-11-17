@@ -8,6 +8,10 @@ export const siteConfig = {
   name: "Haraka Cargo",
   description:
     "Source products from suppliers in India and have them quoted, purchased, shipped and cleared to Tanzania.",
+  // The two brand lines from the full logo lockup. They are set as live text
+  // (not baked into the header image) so they stay legible at any size.
+  tagline: "Your Global Sourcing & Trade Partner",
+  slogan: "Tanzania to the World · The World to Tanzania",
   nav: [
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
